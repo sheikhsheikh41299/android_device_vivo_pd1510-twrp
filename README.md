@@ -5,7 +5,7 @@ Add to `.repo/local_manifests/pd1510.xml`:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-	<project name="sheikhshahnawaz41299/android_device_vivo_pd1510-twrp" path="device/vivo/pd1510"  remote="github" revision="twrp_8.1" />
+	<project name="sheikhshahnawaz41299/android_device_vivo_pd1510-twrp" path="device/vivo/pd1510"  remote="github" revision="twrp_8.1-64bit" />
 </manifest>
 ```
 
