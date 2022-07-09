@@ -29,6 +29,7 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := generic
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
+TARGET_USES_64_BIT_BINDER := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=null androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 product.version=PD1510F_EX_C_2.6.13
@@ -87,8 +88,18 @@ TW_DEFAULT_BRIGHTNESS := 80
 TW_DEFAULT_LANGUAGE := en-US
 TW_EXCLUDE_SUPERSU := true
 TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
 TW_NEW_ION_HEAP := true
-TW_TARGET_USES_QCOM_BSP := false
+TW_TARGET_USES_QCOM_BSP := true
+RECOVERY_GRAPHICS_FORCE_USE_LINELENGTH := true
+TW_EXCLUDE_NANO := true
+TW_IGNORE_ABS_MT_TRACKING_ID := true
+TW_EXCLUDE_NANO := true
+TW_EXCLUDE_BASH := true
+TW_EXCLUDE_PYTHON := true
+TW_EXCLUDE_TZDATA := true
+
+
 
 # Encryption support
 TW_INCLUDE_CRYPTO := true
