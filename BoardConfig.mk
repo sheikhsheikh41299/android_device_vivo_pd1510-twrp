@@ -22,11 +22,13 @@ DEVICE_PATH := device/vivo/pd1510
 ALLOW_MISSING_DEPENDENCIES := true
 
 # Architecture
+FORCE_32_BIT := true
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := generic
+TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=null androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 product.version=PD1510F_EX_C_2.6.13
@@ -45,8 +47,8 @@ BOARD_MKBOOTIMG_ARGS += --dt $(TARGET_PREBUILT_DTB)
 
 # Platform
 # It's not needed for booting TWRP, but it should be added
-#TARGET_BOARD_PLATFORM := 
-#TARGET_BOARD_PLATFORM_GPU := 
+TARGET_BOARD_PLATFORM := msm8916
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno306
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := pd1510
@@ -68,7 +70,7 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/etc/twrp.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 TARGET_RECOVERY_QCOM_RTC_FIX := true
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
+
 
 # Workaround for error copying vendor files to recovery ramdisk
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -77,9 +79,16 @@ TARGET_COPY_OUT_VENDOR := vendor
 # TWRP Configuration
 TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true
-TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_USE_TOOLBOX := true
+
+
+TW_MAX_BRIGHTNESS := 150
+TW_DEFAULT_BRIGHTNESS := 80
+TW_DEFAULT_LANGUAGE := en-US
+TW_EXCLUDE_SUPERSU := true
+TWRP_INCLUDE_LOGCAT := true
+TW_NEW_ION_HEAP := true
+TW_TARGET_USES_QCOM_BSP := false
 
 # Encryption support
 TW_INCLUDE_CRYPTO := true
