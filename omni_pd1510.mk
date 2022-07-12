@@ -16,6 +16,7 @@
 # limitations under the License.
 #
 
+
 # Specify phone tech before including full_phone
 $(call inherit-product, vendor/omni/config/gsm.mk)
 
@@ -29,6 +30,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit language packages
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
+# Charger
+PRODUCT_PACKAGES += \
+    charger_res_images \
+    charger
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := pd1510
 PRODUCT_NAME := omni_pd1510
@@ -36,3 +42,7 @@ PRODUCT_BRAND := vivo
 PRODUCT_MODEL := vivo Y51
 PRODUCT_MANUFACTURER := vivo
 PRODUCT_RELEASE_NAME := vivo Y51
+
+# Explicitly
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.keystore=msm8916
