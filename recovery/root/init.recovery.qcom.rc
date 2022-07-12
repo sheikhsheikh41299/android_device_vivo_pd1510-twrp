@@ -9,8 +9,8 @@ on init
     chown system system /dev/battery_data
 
     # vm_bms
-    chown root system /sys/bus/i2c/drivers/lc709203/batt_capacity
-    chmod 0660 /sys/bus/i2c/drivers/lc709203/batt_capacity
+
+
     chown root system /sys/class/power_supply/bms/current_now
     chown root system /sys/class/power_supply/bms/voltage_ocv
     chmod 0664 /sys/class/power_supply/bms/current_now
